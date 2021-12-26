@@ -1,0 +1,53 @@
+{
+    "manifestVersion": 1,
+    "id": "environment-status-widget",
+    "publisher": "CodeFuller",
+    "version": "0.0.1",
+    "name": "Environment Status Widget",
+    "description": "Dashboard widget that displays which build is installed on each environment.",
+    "public": false,
+    "baseUri": "https://localhost:3000",
+    "categories": [
+        "Azure Boards"
+    ],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "environment-status-widget",
+            "type": "ms.vss-dashboards-web.widget",
+            "targets": [
+                "ms.vss-dashboards-web.widget-catalog"
+            ],
+            "properties": {
+                "name": "Environment Status Widget",
+                "description": "Dashboard widget that displays which build is installed on each environment.",
+                "previewImageUrl": "",
+                "uri": "dist/EnvironmentStatusWidget/environment-status-widget.html",
+                "isNameConfigurable": true,
+                "supportedSizes": [
+                    {
+                        "rowSpan": 1,
+                        "columnSpan": 1
+                    }
+                ],
+                "supportedScopes": [
+                    "project_team"
+                ]
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "static",
+            "addressable": true
+        },
+        {
+            "path": "dist",
+            "addressable": true
+        }
+    ]
+}
