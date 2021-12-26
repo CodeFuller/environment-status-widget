@@ -3,7 +3,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
-        'EnvironmentStatusWidget': './src/EnvironmentStatusWidget/environment-status-widget'
+        'EnvironmentStatusWidget': './src/EnvironmentStatusWidget/EnvironmentStatusWidget'
     },
     output: {
         filename: "[name]/[name].js"

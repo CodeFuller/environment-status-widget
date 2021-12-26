@@ -2,14 +2,39 @@
     "manifestVersion": 1,
     "id": "environment-status-widget",
     "publisher": "CodeFuller",
-    "version": "0.0.1",
+    "version": "0.0.7",
     "name": "Environment Status Widget",
     "description": "Dashboard widget that displays which build is installed on each environment.",
     "public": false,
     "baseUri": "https://localhost:3000",
+    "icons": {
+        "default": "static/extension-logo.png"
+    },
     "categories": [
-        "Azure Boards"
+        "Azure Pipelines"
     ],
+    "tags": [
+        "Environment",
+        "Status",
+        "Version",
+        "Dashboard Widgets"
+    ],
+    "content": {
+        "details": {
+            "path": "docs/Overview.md"
+        },
+        "license": {
+            "path": "docs/LICENSE.txt"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "uri": "https://github.com/CodeFuller/environment-status-widget"
+    },
+    "branding": {
+        "color": "rgb(34, 34, 34)",
+        "theme": "dark"
+    },
     "targets": [
         {
             "id": "Microsoft.VisualStudio.Services"
@@ -25,8 +50,8 @@
             "properties": {
                 "name": "Environment Status Widget",
                 "description": "Dashboard widget that displays which build is installed on each environment.",
-                "previewImageUrl": "",
-                "uri": "dist/EnvironmentStatusWidget/environment-status-widget.html",
+                "catalogIconUrl": "static/catalog-logo.png",
+                "uri": "dist/EnvironmentStatusWidget/EnvironmentStatusWidget.html",
                 "isNameConfigurable": true,
                 "supportedSizes": [
                     {

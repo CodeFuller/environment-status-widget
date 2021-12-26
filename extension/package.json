@@ -6,7 +6,7 @@
         "clean": "rimraf ./dist",
         "compile": "npm run clean && webpack --mode production",
         "build": "npm run compile",
-        "start": "rimraf ./build && react-app-rewired start"
+        "start": "rimraf ./build &&set HTTPS=true&& react-app-rewired start"
     },
     "keywords": [],
     "author": "CodeFuller",
