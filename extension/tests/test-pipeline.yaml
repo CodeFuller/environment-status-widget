@@ -34,7 +34,7 @@ stages:
     displayName: Deploy
     workspace:
       clean: all
-    environment: widget-${{ parameters.TargetEnvironment }}
+    environment: ${{ parameters.TargetEnvironment }}
     strategy:
       runOnce:
         deploy:
