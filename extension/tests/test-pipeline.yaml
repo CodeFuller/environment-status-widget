@@ -16,7 +16,7 @@ parameters:
       'widget-succeeded',
       # Environment where last deploy of preview version was successful.
       'widget-preview',
-      # Environment where last deploy of was failed.
+      # Environment where last deploy was failed.
       'widget-failed',
       # Environment with no deploys yet.
       'widget-empty'

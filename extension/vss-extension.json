@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "environment-status-widget",
     "publisher": "CodeFuller",
-    "version": "0.0.7",
+    "version": "0.0.10",
     "name": "Environment Status Widget",
     "description": "Dashboard widget that displays which build is installed on each environment.",
     "public": false,
@@ -74,5 +74,9 @@
             "path": "dist",
             "addressable": true
         }
+    ],
+    "scopes": [
+        "vso.build",
+        "vso.environment_manage"
     ]
 }
