@@ -11,7 +11,16 @@ parameters:
   - name: TargetEnvironment
     displayName: Target Environment
     type: string
-    values: [ dev, qa, stage, prod ]
+    values: [
+      # Environment where last deploy of release version was successful.
+      'widget-succeeded',
+      # Environment where last deploy of preview version was successful.
+      'widget-preview',
+      # Environment where last deploy of was failed.
+      'widget-failed',
+      # Environment with no deploys yet.
+      'widget-empty'
+    ]
   - name: FailBuild
     displayName: Fail Build
     type: boolean
