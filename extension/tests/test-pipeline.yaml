@@ -21,8 +21,8 @@ parameters:
       # Environment with no deploys yet.
       'widget-empty'
     ]
-  - name: FailBuild
-    displayName: Fail Build
+  - name: FailDeploy
+    displayName: Fail Deploy
     type: boolean
     default: false
 
@@ -45,7 +45,6 @@ stages:
               displayName: Define Build Version
 
             - powershell: |
-                if (${{ parameters.FailBuild }}) {
-                  throw "Failing build as requested"
-                }
-              displayName: Fake Deploy
+                  throw "Failing deploy as requested"
+              displayName: Fail Deploy
+              condition: and(succeeded(), eq('${{ parameters.FailDeploy }}', 'true'))
