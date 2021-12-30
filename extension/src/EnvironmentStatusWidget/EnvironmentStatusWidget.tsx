@@ -23,11 +23,12 @@ class EnvironmentStatusWidget {
         const projectName = "Environment Status Widget";
 
         const taskAgentClient = getClient(TaskAgentRestClient);
+        const buildClient = getClient(BuildRestClient);
 
         const environments = await taskAgentClient.getEnvironments(projectName);
         for (const environment of environments) {
             console.debug(`Processing environment ${environment.name} ...`)
-            const buildNumber = await this.getLastEnvironmentBuildNumber(taskAgentClient, projectName, environment);
+            const buildNumber = await this.getLastEnvironmentBuildNumber(taskAgentClient, buildClient, projectName, environment);
             console.debug(`Last successful build for environment ${environment.name} is ${buildNumber}`);
         }
 
@@ -45,14 +46,11 @@ class EnvironmentStatusWidget {
         };
     }
 
-    // TODO: Do we need to re-use client instance or can retrieve it in-place?
-    private async getLastEnvironmentBuildNumber(taskAgentClient: TaskAgentRestClient, projectName: string, environment: EnvironmentInstance): Promise<string | null> {
+    private async getLastEnvironmentBuildNumber(taskAgentClient: TaskAgentRestClient, buildClient: BuildRestClient, projectName: string, environment: EnvironmentInstance): Promise<string | null> {
         const buildId = await this.getLastEnvironmentBuildId(taskAgentClient, projectName, environment);
         if (buildId === null) {
             return null;
         }
-
-        const buildClient = getClient(BuildRestClient);
 
         // TODO: Handle missing build
         const build = await buildClient.getBuild(projectName, buildId);
